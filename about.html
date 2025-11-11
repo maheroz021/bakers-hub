@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Baker's Hub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    .about-section { padding: 4rem 0; }
+    .about-grid { display: grid; gap: 2rem; align-items: center; }
+    .about-image { width: 100%; border-radius: var(--border-radius); box-shadow: var(--shadow-soft); object-fit: cover; height: 300px; }
+    .about-content h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .about-content .script-font { font-size: 3rem; margin-bottom: 1.5rem; display: block; }
+    .about-content p { color: var(--color-text-light); margin-bottom: 1.5rem; line-height: 1.7; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .feature-item { text-align: center; padding: 1.5rem; background: var(--color-beige); border-radius: var(--border-radius); }
+    .feature-item i { font-size: 2.5rem; color: var(--color-orange); margin-bottom: 1rem; }
+    .feature-item h3 { font-size: 1.1rem; font-weight: 600; }
+    @media screen and (min-width: 768px) { .about-grid { grid-template-columns: 1fr 1fr; } .about-image { height: 400px; } }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        Baker's <span class="nav__logo-script">Hub</span>
+      </a>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="menu.html" class="nav__link">Menu</a></li>
+          <li class="nav__item"><a href="about.html" class="nav__link active">About</a></li>
+          <li class="nav__item"><a href="testimonials.html" class="nav__link">Reviews</a></li>
+          <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav__icons">
+        <div class="cart-icon" id="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-item-count" id="cart-item-count">0</span>
+        </div>
+        <i class="fas fa-user"></i>
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about-section container">
+      <div class="about-grid">
+        <img src="images/bakery-story.jpg" alt="Inside Baker's Hub" class="about-image"> 
+        
+        <div class="about-content">
+          <h1>Our Story</h1>
+          <span class="script-font">Baking with Love</span>
+          <p>
+            Welcome to Baker's Hub, where passion meets pastry. Founded in 2024, our little bakery started with a big dream: to create the most delightful and heartwarming treats in town. 
+          </p>
+          <p>
+            Every recipe is a family secret, every ingredient is hand-picked for quality, and every item is baked fresh daily. We believe in the simple joy that a perfect croissant or a decadent slice of cake can bring.
+          </p>
+        </div>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-item">
+          <i class="fas fa-seedling"></i>
+          <h3>Fresh Ingredients</h3>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-hands-heart"></i>
+          <h3>Made By Hand</h3>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-smile-beam"></i>
+          <h3>Happy Customers</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <a href="index.html" class="footer__logo">Baker's Hub</a>
+      <p>Baking the world a better place, one pastry at a time.</p>
+      <div class="footer__social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <p class="footer__copy">© 2025 Baker's Hub. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <div class="sticky-cart" id="sticky-cart">
+    <div class="sticky-cart__header">
+      <h3 class="sticky-cart__title">Your Cart</h3>
+      <i class="fas fa-times" id="cart-close-btn"></i>
+    </div>
+    <div class="sticky-cart__items" id="cart-items-container">
+      <p>Your cart is empty.</p>
+    </div>
+    <div class="sticky-cart__footer">
+      <div class="sticky-cart__total">
+        Total: <span id="cart-total-price">$0.00</span>
+      </div>
+      <a href="order.html" class="btn btn-checkout">Checkout</a>
+    </div>
+  </div>
+
+  <script src="js/admin-menu.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

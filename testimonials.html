@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews - Baker's Hub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    .review-section { padding: 4rem 0; }
+    .review-grid { display: grid; gap: 1.5rem; margin-top: 2rem; }
+    .review-card { background: var(--color-white); border-radius: var(--border-radius); box-shadow: var(--shadow-soft); padding: 2rem; border-top: 4px solid var(--color-mint); }
+    .review-card__text { font-style: italic; color: var(--color-text-light); margin-bottom: 1.5rem; position: relative; }
+    .review-card__text::before { content: '“'; font-family: Georgia, serif; font-size: 4rem; color: var(--color-mint); opacity: 0.5; position: absolute; top: -1.5rem; left: -1rem; }
+    .review-card__author { display: flex; align-items: center; gap: 1rem; }
+    
+    /* UPDATED: Style for the icon */
+    .review-card__author-icon {
+      font-size: 3rem; /* 50px */
+      color: var(--color-text-light);
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .review-card__author-name { font-weight: 600; }
+    .review-card__rating { color: #FFC107; font-size: 0.9rem; }
+    
+    @media screen and (min-width: 768px) { .review-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media screen and (min-width: 992px) { .review-grid { grid-template-columns: repeat(3, 1fr); } }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        Baker's <span class="nav__logo-script">Hub</span>
+      </a>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="menu.html" class="nav__link">Menu</a></li>
+          <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="testimonials.html" class="nav__link active">Reviews</a></li>
+          <li class="nav__item"><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav__icons">
+        <div class="cart-icon" id="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-item-count" id="cart-item-count">0</span>
+        </div>
+        <i class="fas fa-user"></i>
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="review-section container">
+      <h1 class="section-title">
+        From Our <span class="script-font">Customers</span>
+      </h1>
+      
+      <div class="review-grid">
+        <div class="review-card">
+          <div class="review-card__rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="review-card__text">
+            This is, without a doubt, the best Velvet Cake I have ever had. The cream cheese frosting was perfection!
+          </p>
+          <div class="review-card__author">
+            <div class="review-card__author-icon">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div>
+              <h4 class="review-card__author-name">Sarah J.</h4>
+            </div>
+          </div>
+        </div>
+        
+        <div class="review-card">
+          <div class="review-card__rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+          <p class="review-card__text">
+            The sourdough loaf is a weekend staple for us. Perfectly crusty on the outside and soft on the inside.
+          </s>
+          <div class="review-card__author">
+            <div class="review-card__author-icon">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div>
+              <h4 class="review-card__author-name">Mark T.</h4>
+            </div>
+          </div>
+        </div>
+        
+        <div class="review-card">
+          <div class="review-card__rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="review-card__text">
+            I ordered cookies for my office and they were a massive hit. The Choco-Chip is a must-try! Cute packaging too.
+          </p>
+          <div class="review-card__author">
+            <div class="review-card__author-icon">
+              <i class="fas fa-user-circle"></i>
+            </div>
+            <div>
+              <h4 class="review-card__author-name">Emily R.</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <a href="index.html" class="footer__logo">Baker's Hub</a>
+      <p>Baking the world a better place, one pastry at a time.</p>
+      <div class="footer__social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <p class="footer__copy">© 2025 Baker's Hub. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <div class="sticky-cart" id="sticky-cart">
+    <div class="sticky-cart__header">
+      <h3 class="sticky-cart__title">Your Cart</h3>
+      <i class="fas fa-times" id="cart-close-btn"></i>
+    </div>
+    <div class="sticky-cart__items" id="cart-items-container">
+      <p>Your cart is empty.</p>
+    </div>
+    <div class="sticky-cart__footer">
+      <div class="sticky-cart__total">
+        Total: <span id="cart-total-price">$0.00</span>
+      </div>
+      <a href="order.html" class="btn btn-checkout">Checkout</a>
+    </div>
+  </div>
+
+  <script src="js/admin-menu.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

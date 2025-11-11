@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Order - Baker's Hub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    .order-section {
+      padding: 4rem 0;
+    }
+    .order-grid {
+      display: grid;
+      gap: 3rem;
+    }
+    .order-summary, .checkout-form {
+      background: var(--color-white);
+      box-shadow: var(--shadow-soft);
+      border-radius: var(--border-radius);
+      padding: 2rem;
+    }
+    .order-summary h2, .checkout-form h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid var(--color-beige);
+      padding-bottom: 1rem;
+    }
+    .order-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .order-item-name {
+      font-weight: 600;
+    }
+    .order-item-details {
+      color: var(--color-text-light);
+    }
+    .order-total {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border-top: 2px solid var(--color-mint);
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+    }
+
+    @media screen and (min-width: 992px) {
+      .order-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        Baker's <span class="nav__logo-script">Hub</span>
+      </a>
+      <div class="nav__icons">
+        <a href="menu.html" class="nav__link" style="font-weight: 600; font-size: 1rem;"><i class="fas fa-arrow-left"></i> Back to Menu</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="order-section container">
+      <h1 class="section-title">
+        Complete Your <span class="script-font">Order</span>
+      </h1>
+      
+      <div class="order-grid">
+        <div class="checkout-form">
+          <h2>Delivery Details</h2>
+          <form id="checkout-form" novalidate>
+            <div class="contact-form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" class="contact-form-input" required>
+              <div class="error-message">Name is required.</div>
+            </div>
+            <div class="contact-form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" class="contact-form-input" required>
+              <div class="error-message">A valid email is required.</div>
+            </div>
+            <div class="contact-form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" class="contact-form-input" required>
+              <div class="error-message">Phone number is required.</div>
+            </div>
+            <div class="contact-form-group">
+              <label for="address">Address</label>
+              <input type="text" id="address" name="address" class="contact-form-input" required>
+              <div class="error-message">Address is required.</div>
+            </div>
+            
+            <button type="submit" class="btn" style="width: 100%; font-size: 1.1rem;">Place Order</button>
+          </form>
+        </div>
+      
+        <div class="order-summary">
+          <h2>Your Order</h2>
+          <div id="order-summary-items">
+            <p>Your cart is empty.</p>
+          </div>
+          <div class="order-total">
+            <span>Total</span>
+            <span id="order-summary-total">$0.00</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <script src="js/admin-menu.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

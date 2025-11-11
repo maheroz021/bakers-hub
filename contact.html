@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Baker's Hub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    .contact-section {
+      padding: 4rem 0;
+    }
+    .contact-grid {
+      display: grid;
+      gap: 3rem;
+    }
+    .map-container {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      height: 400px;
+      box-shadow: var(--shadow-soft);
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    @media screen and (min-width: 992px) {
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        Baker's <span class="nav__logo-script">Hub</span>
+      </a>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+          <li class="nav__item"><a href="menu.html" class="nav__link">Menu</a></li>
+          <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="testimonials.html" class="nav__link">Reviews</a></li>
+          <li class="nav__item"><a href="contact.html" class="nav__link active">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav__icons">
+        <div class="cart-icon" id="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-item-count" id="cart-item-count">0</span>
+        </div>
+        <i class="fas fa-user"></i>
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-section container">
+      <h1 class="section-title">
+        Get In <span class="script-font">Touch</span>
+      </h1>
+      
+      <div class="contact-grid">
+        <form id="contact-form" class="contact-form" novalidate>
+          <div class="contact-form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" class="contact-form-input" required>
+            <div class="error-message">Name is required.</div>
+          </div>
+          
+          <div class="contact-form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" class="contact-form-input" required>
+            <div class="error-message">A valid email is required.</div>
+          </div>
+          
+          <div class="contact-form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" class="contact-form-textarea" required></textarea>
+            <div class="error-message">Message cannot be empty.</div>
+          </div>
+          
+          <button type="submit" class="btn">Send Message</button>
+          
+          <div id="form-status" class="form-message" style="display: none;"></div>
+        </form>
+        <div class="map-container">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61102.890065529944!2d75.67633767219728!3d16.82979719494619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc65574c0cdafa3%3A0xd964a78d4d2e25a6!2sGol%20Gumbaz!5e0!3m2!1sen!2sin!4v1761985150590!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+        
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <a href="index.html" class="footer__logo">Baker's Hub</a>
+      <p>Baking the world a better place, one pastry at a time.</p>
+      <div class="footer__social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <p class="footer__copy">&copy; 2025 Baker's Hub. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <div class="sticky-cart" id="sticky-cart">
+    <div class="sticky-cart__header">
+      <h3 class="sticky-cart__title">Your Cart</h3>
+      <i class="fas fa-times" id="cart-close-btn"></i>
+    </div>
+    <div class="sticky-cart__items" id="cart-items-container">
+      <p>Your cart is empty.</p>
+    </div>
+    <div class="sticky-cart__footer">
+      <div class="sticky-cart__total">
+        Total: <span id="cart-total-price">$0.00</span>
+      </div>
+      <a href="order.html" class="btn btn-checkout">Checkout</a>
+    </div>
+  </div>
+
+  <script src="js/admin-menu.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
